@@ -1,1 +1,7 @@
-<h1><%= @msg %></h1>
+<% if !@category.blank? %>
+  <% for item in @category %>
+    <li><%= item.name %> test</li>
+  <% end %>
+<% else %>
+<p> Rien à afficher </p>
+<% end %>

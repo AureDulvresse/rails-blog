@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root "category#index"
+  get  "add" => "category#new", as: :create_category_form
+
 end
