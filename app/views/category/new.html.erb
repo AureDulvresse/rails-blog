@@ -1,13 +1,18 @@
-<form method="POST" action="/add">
-
+<%= form_with model: @categories do |f| %>
     <div>
-    <LABEL>Nom</LABEL>
-    <input type="text" name="name" />
-    </div>
-    <div>
-    <LABEL>description</LABEL>
-    <textarea name="description"></textarea>
+        <%= f.label :title, "Titre de la catégory" %>
+        <%= f.text_field :title %>
     </div>
 
-    <button type="submit">Save</button>
-</form>
+        <div>
+        <%= f.label :description, "Description de la catégory" %>
+        <%= f.text_area :description %>
+        </div>
+
+            <div>
+        <%= f.label :title, "Image" %>
+        <%= f.file_field :image %>
+        </div>
+
+        <%= f.submit "Créer une category" %>
+<% end %>

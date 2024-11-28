@@ -12,10 +12,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  root "category#index"
   Rails.application.routes.draw do
-    resources :categories
+    resources :category
   end
+
   
+  
+  root to: "category#index"
 
 end
