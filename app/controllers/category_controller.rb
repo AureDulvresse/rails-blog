@@ -1,19 +1,18 @@
 class CategoryController < ApplicationController
     
-    def create_category_form
+    def index
+        @category = Category.all()
+    end
+
+    def show
+        @category = Category.find(params[:id])
+    end
+
+    def new
         
     end
-    
-    
-      def index
-        @category = Category.all()
-      end
-    
-      def show
-        @category = Category.find(params[:id])
-      end
-    
-      def create
+
+    def create
         @category = Category.new(params[:category])
 
         if @category.save
@@ -24,18 +23,18 @@ class CategoryController < ApplicationController
           render 'new'
         end
 
-      end
-    
-      def update
+    end
+
+    def update
         @category = Category.find(params[:id])
-      end
-    
-      def edit
+    end
+
+    def edit
         @category = Category.find(params[:id])
-      end
-    
-      def destroy
+    end
+
+    def destroy
         category = Category.find(params[:id])
-      end 
+    end 
     
 end
