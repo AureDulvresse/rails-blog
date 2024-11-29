@@ -1,11 +1,11 @@
 class CategoryController < ApplicationController
     def index
-        @categories = Category.all
+      @categories = Category.all
     end
 
     def show
-        @category = Category.find(params[:id])
-        fresh_when etag: @category
+      @category = Category.find(params[:id])
+      fresh_when etag: @category
     end
 
     # def new
@@ -13,20 +13,20 @@ class CategoryController < ApplicationController
     # end
 
     def create
-       @category = Category.create!(category_params)
-       redirect_to category
+      @category = Category.create!(category_params)
+      redirect_to category
     end
 
     def update
-       @category = Category.find(params[:id])
+      @category = Category.find(params[:id])
     end
 
     def edit
-       @category = Category.find(params[:id])
+      @category = Category.find(params[:id])
     end
 
     def destroy
-       category = Category.find(params[:id])
+      @category = Category.find(params[:id])
     end
 
     private
