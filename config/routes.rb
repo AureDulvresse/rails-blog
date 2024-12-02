@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :posts
+  end
+  resources :helps
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -13,10 +17,9 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   Rails.application.routes.draw do
-    resources :category
+  namespace :admin do
+    resources :posts
   end
-
-  
   
   root to: "category#index"
 
