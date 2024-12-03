@@ -8,9 +8,9 @@ class CategoryController < ApplicationController
       fresh_when etag: @category
     end
 
-    # def new
-    #     category = Category.new
-    # end
+    def new
+        category = Category.new
+    end
 
     def create
       @category = Category.create!(category_params)

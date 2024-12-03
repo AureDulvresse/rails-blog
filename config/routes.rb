@@ -17,8 +17,9 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   Rails.application.routes.draw do
-  namespace :admin do
-    resources :posts
+    namespace :admin do
+      resources :posts
+    end
   end
   
   root to: "category#index"
