@@ -21,7 +21,7 @@ Rails.application.routes.draw do
       resources :posts
     end
 
-    resources :categories
+    resources :category
   end
 
   root to: "category#index"
